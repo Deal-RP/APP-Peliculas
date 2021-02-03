@@ -1,0 +1,19 @@
+<!-- slidesOpts para manejar como se muestra cada opcion -->
+<ion-slides [options]="slideOpts">
+
+  <!-- Desplegar las diferentes peliculas -->
+  <ion-slide *ngFor="let pelicula of peliculas">
+    
+    <!-- colocar modo md para que no se alarguen las imagenes en ios -->
+    <ion-card mode="md" (click)="verDetalle( pelicula.id )">
+
+       <!-- Llamar el pipe para obtener imagen
+      | imagen es como llamar al pipe -->
+      <img class="poster"
+           [src]="pelicula.poster_path | imagen">
+
+    </ion-card>
+
+  </ion-slide>
+
+</ion-slides>

@@ -1,0 +1,19 @@
+
+<!-- slidesOpts para manejar como se muestra cada opcion -->
+<ion-slides [options]="slideOpts">
+  
+  <!-- Desplegar las diferentes peliculas
+      | filtroImagen es como llamar al pipe -->
+  <ion-slide *ngFor="let pelicula of peliculas | filtroImagen">
+    
+    
+    <ion-card (click)="verDetalle( pelicula.id )">
+
+      <!-- Llamar el pipe para obtener imagen
+      | imagen es como llamar al pipe -->
+      <img [src]="pelicula.backdrop_path | imagen">
+    </ion-card>
+
+
+  </ion-slide>
+</ion-slides>

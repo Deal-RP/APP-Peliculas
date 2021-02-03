@@ -1,0 +1,32 @@
+<ion-content>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Favoritos</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Obtener la pelicula por cada genero -->
+  <div *ngFor="let pelicula of favoritoGenero">
+    
+    <!-- Desplegar cada pelicula segun si genero -->
+    <ion-grid  *ngIf="pelicula.pelis.length > 0">
+      <ion-row>
+        <ion-col>
+          <h4>{{ pelicula.genero }}</h4>
+        </ion-col>
+      </ion-row>
+      
+      <!-- Enviar el arreglo de peliculas para deplegar cada pelicula de ese genero -->
+      <app-slideshow-poster [peliculas]="pelicula.pelis"></app-slideshow-poster>
+
+    </ion-grid>
+    
+    
+
+  </div>
+
+
+</ion-content>
